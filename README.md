@@ -105,11 +105,10 @@ npm start
 ```
 
 ### 4. Configure Environment Variables
-```bash
-# Inside the /server directory, create a .env file and add:
-# MONGO_URI=your_mongo_connection_string
-# JWT_SECRET=your_jwt_secret_key
-```
+
+#### Inside the /server directory, create a .env file and add:
+#### MONGO_URI=your_mongo_connection_string
+#### JWT_SECRET=your_jwt_secret_key
 
 ## Screenshots
 

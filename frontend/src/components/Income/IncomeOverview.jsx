@@ -14,11 +14,11 @@ const IncomeOverview = ({ transactions, onAddIncome }) => {
   }, [transactions]);
   
   return (
-    <div className="card">
+    <div className="card2">
       <div className="flex items-center justify-between">
         <div>
-          <h5 className="text-lg">Income Overview</h5>
-          <p className="text-xs text-gray-400 mt-0.5">
+          <h5 className="text-xl font-medium">Income Overview</h5>
+          <p className="text-xs text-gray-700 mt-0.5">
             Track your earnings over time and analyze your income trends.
           </p>
         </div>
@@ -29,7 +29,7 @@ const IncomeOverview = ({ transactions, onAddIncome }) => {
         </button>
       </div>
   
-      <div className="mt-10">
+      <div className="mt-10 card">
         <CustomBarChart data={chartData} />
       </div>
     </div>

@@ -5,7 +5,7 @@ import moment from "moment";
 
 const RecentTransactions = ({ transactions}) => {
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-md shadow-gray-100 border border-gray-200/50">
+    <div className="card">
       <div className="flex items-center justify-center ">
         <h5 className="text-xl font-medium">Recent Transactions</h5>
 

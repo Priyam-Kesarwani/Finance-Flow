@@ -64,6 +64,7 @@ const SignUp = () => {
         navigate("/dashboard");
       }
     } catch (error) {
+      console.error("Signup API Error:", error.response?.data || error.message);
       if (error.response?.data?.message) {
         setError(error.response.data.message);
       } else {
@@ -97,7 +98,10 @@ const SignUp = () => {
 
           <form onSubmit={handleSignUp} className="mt-8 space-y-6">
             <div className="flex justify-center">
-              <ProfilePhotoSelector image={profilePic} setimage={setProfilePic} />
+              <ProfilePhotoSelector
+                image={profilePic}
+                setimage={setProfilePic}
+              />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

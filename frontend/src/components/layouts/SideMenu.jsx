@@ -23,14 +23,14 @@ const SideMenu = ({ activeMenu }) => {
   };
 
   return (
-    <div className="h-[calc(100vh-61px)] border-r bg-white border-gray-200 w-64 p-5 sticky top-[61px] z-20">
+    <div className="h-[calc(100vh-61px)] border-r bg-gradient-to-b from-yellow-100 to-red-300 border-gray-200 w-64 p-5 sticky top-[61px] z-20">
       {/* User Info Section */}
       <div className="flex flex-col items-center justify-center gap-3 mt-3 mb-7">
         {user?.profileImageUrl ? (
           <img
             src={user.profileImageUrl}
             alt="Profile"
-            className="w-20 h-20 rounded-full bg-slate-400 object-cover"
+            className="w-22 h-22 rounded-full object-cover border-4 border-white shadow-md hover:scale-105 transition-transform duration-300"
           />
         ) : (
           <CharAvatar

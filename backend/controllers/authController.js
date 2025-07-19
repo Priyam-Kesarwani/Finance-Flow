@@ -6,6 +6,7 @@ const generateToken = (id)=>{
 }
 
 exports.registerUser = async (req,res)=> {
+   console.log("Received Register Request Body:", req.body);
   const {fullName,email,password, profileImageUrl}=req.body;
   if(!fullName || !email || !password){
     return res.status(400).json({message:"All fields are required"});

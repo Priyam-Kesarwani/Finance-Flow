@@ -13,12 +13,12 @@ const ExpenseOverview = ({ transactions, onAddExpense }) => {
     return () => {};
   }, [transactions]);
   return (
-    <div className="card">
+    <div className="card2">
       <div className="flex items-center justify-between">
         <div className="">
-          <h5 className="text-lg">Expense Overview</h5>
+          <h5 className="text-xl font-medium">Expense Overview</h5>
           <p
-            className="text-xs text-gray-400 mt-0.5"
+            className="text-xs text-gray-700 mt-0.5"
           >
             Track your spending trends over time and gain insights into where your money goes.
           </p>
@@ -30,7 +30,7 @@ const ExpenseOverview = ({ transactions, onAddExpense }) => {
         </button>
       </div>
 
-      <div className="mt-10">
+      <div className="mt-10 card">
         <CustomLineChart data={chartData} />
       </div>
     </div>

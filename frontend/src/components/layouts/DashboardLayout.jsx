@@ -8,7 +8,7 @@ const DashboardLayout = ({ children, activeMenu }) => {
   const { user } = useContext(UserContext);
 
   return (
-    <div>
+    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-200">
       <Navbar activeMenu={activeMenu} />
 
       {user && (

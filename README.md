@@ -116,13 +116,14 @@ npm start
 
 ![Screenshot 2025-05-07 192209](https://github.com/user-attachments/assets/5a87c093-519c-4ba8-b379-d2b3c7d30613)
 
-![Screenshot 2025-05-07 192105](https://github.com/user-attachments/assets/b46e6fdb-fe51-4271-b98d-f06537db8f51)
+<img width="1920" height="1080" alt="Screenshot 2025-07-19 122238" src="https://github.com/user-attachments/assets/df8f0fb9-7749-44fb-9078-e464f8414ecc" />
 
-![Screenshot 2025-05-07 192119](https://github.com/user-attachments/assets/93d328d3-0ce6-48ce-b24d-cbb16fb64f59)
+<img width="1920" height="1080" alt="Screenshot 2025-07-19 122252" src="https://github.com/user-attachments/assets/f11b0462-a88f-4d93-af25-4a267ab0c65a" />
 
-![Screenshot 2025-05-07 192137](https://github.com/user-attachments/assets/bc507020-f006-41a4-89ef-ecc043b7d1e6)
+<img width="1920" height="1080" alt="Screenshot 2025-07-19 122305" src="https://github.com/user-attachments/assets/12767a4d-ccc2-4e6a-b205-1f62e161fd39" />
 
-![Screenshot 2025-05-07 192148](https://github.com/user-attachments/assets/a61240ce-ae6b-432c-be77-776038797ceb)
+<img width="1920" height="1080" alt="Screenshot 2025-07-19 122321" src="https://github.com/user-attachments/assets/aa3cb539-3c23-4646-882b-50a60859cb10" />
+
 
 ---
 

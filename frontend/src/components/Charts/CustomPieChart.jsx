@@ -45,8 +45,7 @@ const CustomPieChart = ({ data, label, totalAmount, colors, showTextAnchor }) =>
             <>
               <text
                 x="50%"
-                y="50%"
-                dominantBaseline="middle"
+                y="45%"
                 textAnchor="middle"
                 fill="#666"
                 fontSize={fontSizeLabel}
@@ -55,9 +54,7 @@ const CustomPieChart = ({ data, label, totalAmount, colors, showTextAnchor }) =>
               </text>
               <text
                 x="50%"
-                y="50%"
-                dy="20"
-                dominantBaseline="middle"
+                y="55%"
                 textAnchor="middle"
                 fill="#333"
                 fontSize={fontSizeAmount}

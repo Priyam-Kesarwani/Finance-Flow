@@ -10,6 +10,36 @@ import {
 import CustomToolTip from "./CustomToolTip";
 import CustomLegend from "./CustomLegend";
 
+const renderCenterLabel = (props, label, totalAmount, fontSizeLabel, fontSizeAmount) => {
+  const { cx, cy } = props; // Center of PieChart
+
+  return (
+    <>
+      <text
+        x={cx}
+        y={cy - 10}
+        textAnchor="middle"
+        dominantBaseline="central"
+        fill="#666"
+        fontSize={fontSizeLabel}
+      >
+        {label}
+      </text>
+      <text
+        x={cx}
+        y={cy + 10}
+        textAnchor="middle"
+        dominantBaseline="central"
+        fill="#333"
+        fontSize={fontSizeAmount}
+        fontWeight="600"
+      >
+        {totalAmount}
+      </text>
+    </>
+  );
+};
+
 const CustomPieChart = ({ data, label, totalAmount, colors, showTextAnchor }) => {
   if (!data || data.length === 0) return null;
 
@@ -32,6 +62,13 @@ const CustomPieChart = ({ data, label, totalAmount, colors, showTextAnchor }) =>
             outerRadius={outerRadius}
             innerRadius={innerRadius}
             labelLine={false}
+            // ✅ Custom Center Label with Recharts' built-in feature
+            label={(props) =>
+              showTextAnchor
+                ? renderCenterLabel(props, label, totalAmount, fontSizeLabel, fontSizeAmount)
+                : null
+            }
+            labelPosition="center"
           >
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
@@ -40,30 +77,6 @@ const CustomPieChart = ({ data, label, totalAmount, colors, showTextAnchor }) =>
 
           <Tooltip content={CustomToolTip} />
           <Legend content={CustomLegend} verticalAlign="bottom" />
-
-          {showTextAnchor && (
-            <>
-              <text
-                x="50%"
-                y="45%"
-                textAnchor="middle"
-                fill="#666"
-                fontSize={fontSizeLabel}
-              >
-                {label}
-              </text>
-              <text
-                x="50%"
-                y="55%"
-                textAnchor="middle"
-                fill="#333"
-                fontSize={fontSizeAmount}
-                fontWeight="600"
-              >
-                {totalAmount}
-              </text>
-            </>
-          )}
         </PieChart>
       </ResponsiveContainer>
     </div>

@@ -42,11 +42,11 @@ const CustomPieChart = ({ data, label, totalAmount, colors, showTextAnchor }) =>
           <Legend content={CustomLegend} verticalAlign="bottom" />
 
           {showTextAnchor && (
-            <g>
+            <>
               <text
                 x="50%"
                 y="50%"
-                dy={-20}
+                dominantBaseline="middle"
                 textAnchor="middle"
                 fill="#666"
                 fontSize={fontSizeLabel}
@@ -56,7 +56,8 @@ const CustomPieChart = ({ data, label, totalAmount, colors, showTextAnchor }) =>
               <text
                 x="50%"
                 y="50%"
-                dy={10}
+                dy="20"
+                dominantBaseline="middle"
                 textAnchor="middle"
                 fill="#333"
                 fontSize={fontSizeAmount}
@@ -64,7 +65,7 @@ const CustomPieChart = ({ data, label, totalAmount, colors, showTextAnchor }) =>
               >
                 {totalAmount}
               </text>
-            </g>
+            </>
           )}
         </PieChart>
       </ResponsiveContainer>

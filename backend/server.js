@@ -12,7 +12,7 @@ const app=express();
 
 app.use(
   cors({
-    origin: "https://finance-flow-frontend.onrender.com", // Replace with your frontend URL
+    origin: "https://finance-flow-by-star.vercel.app", // Replace with your frontend URL
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,

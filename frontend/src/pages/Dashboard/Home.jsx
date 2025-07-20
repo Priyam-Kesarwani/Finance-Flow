@@ -44,7 +44,7 @@ const Home = () => {
     <DashboardLayout activeMenu="Dashboard">
       <div className="mx-auto max-w-7xl px-4">
         {/* Summary Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 mt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-4 mt-4">
           {[
             {
               icon: <IoMdCard />,
@@ -65,18 +65,13 @@ const Home = () => {
               color: "bg-rose-500",
             },
           ].map((card, index) => (
-            <div
+            <InfoCard
               key={index}
-              className={`flex items-center p-6 rounded-xl shadow-md ${card.color} text-white hover:scale-[1.02] transition-transform duration-300 ease-in-out`}
-            >
-              <div className="text-3xl mr-4">{card.icon}</div>
-              <div>
-                <div className="text-sm uppercase tracking-wide font-semibold">
-                  {card.label}
-                </div>
-                <div className="text-2xl font-bold mt-1">{card.value}</div>
-              </div>
-            </div>
+              icon={card.icon}
+              label={card.label}
+              value={card.value}
+              color={card.color}
+            />
           ))}
         </div>
 

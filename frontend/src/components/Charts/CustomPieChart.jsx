@@ -10,30 +10,22 @@ import {
 import CustomToolTip from "./CustomToolTip";
 import CustomLegend from "./CustomLegend";
 
-const CustomPieChart = ({
-  data,
-  label,
-  totalAmount,
-  colors,
-  showTextAnchor,
-}) => {
-  console.log("CustomPieChart props:", {
-    data,
-    label,
-    totalAmount,
-    colors,
-    showTextAnchor
-  });
+const CustomPieChart = ({ data, label, totalAmount, colors, showTextAnchor }) => {
+  console.log("CustomPieChart props:", { data, label, totalAmount, colors, showTextAnchor });
 
-  // Verify data is valid
   if (!data || data.length === 0) {
     console.warn("No data provided to CustomPieChart");
     return null;
   }
-  
+
+  const isMobile = window.innerWidth < 640;
+  const outerRadius = isMobile ? 100 : 130;
+  const innerRadius = isMobile ? 70 : 100;
+  const fontSizeLabel = isMobile ? "12px" : "14px";
+  const fontSizeAmount = isMobile ? "18px" : "24px";
+
   return (
-     
-    <ResponsiveContainer width="100%" height={380}>
+    <ResponsiveContainer width="100%" minWidth={250} height={300}>
       <PieChart>
         <Pie
           data={data}
@@ -41,28 +33,27 @@ const CustomPieChart = ({
           nameKey="name"
           cx="50%"
           cy="50%"
-          outerRadius={130}
-          innerRadius={100}
+          outerRadius={outerRadius}
+          innerRadius={innerRadius}
           labelLine={false}
         >
           {data.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
           ))}
         </Pie>
+
         <Tooltip content={CustomToolTip} />
-        <Legend content={CustomLegend}/>
+        <Legend content={CustomLegend} />
 
         {showTextAnchor && (
-          <g style={{ transform: 'translateZ(1px)' }}>
+          <g>
             <text
               x="50%"
               y="50%"
               dy={-30}
-              dominantBaseline="middle"
               textAnchor="middle"
               fill="#666"
-              fontSize="14px"
-              style={{ zIndex: 1000 }}
+              fontSize={fontSizeLabel}
             >
               {label}
             </text>
@@ -70,16 +61,14 @@ const CustomPieChart = ({
               x="50%"
               y="50%"
               dy={2}
-              dominantBaseline="middle"
               textAnchor="middle"
               fill="#333"
-              fontSize="24px"
+              fontSize={fontSizeAmount}
               fontWeight="600"
-              style={{ zIndex: 1000 }}
             >
               {totalAmount}
             </text>
-            </g>
+          </g>
         )}
       </PieChart>
     </ResponsiveContainer>

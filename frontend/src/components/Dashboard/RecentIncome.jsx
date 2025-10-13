@@ -9,13 +9,13 @@ const RecentIncome = ({ transactions, onSeeMore }) => {
       <div className="flex items-center justify-between">
         <h5 className="text-xl font-medium px-4">Income</h5>
 
-        <button className="flex items-center gap-3 text-[12px] font-medium text-gray-700 hover:text-purple-500 bg-gray-50 hover:bg-purple-50 px-4 py-1.5 rounded-lg border border-gray-200/50 cursor-pointer" onClick={onSeeMore}>
+        <button className="btn-ghost" onClick={onSeeMore}>
           See All <LuArrowRight className="text-base" />
         </button>
       </div>
 
       <div className="mt-6">
-        {transactions?.slice(0, 5)?.map((item) => (
+        {(Array.isArray(transactions) ? transactions.slice(0, 5) : []).map((item) => (
           <TransactionInfoCard
             key={item._id}
             title={item.source}
@@ -26,6 +26,9 @@ const RecentIncome = ({ transactions, onSeeMore }) => {
             hideDeleteBtn
           />
         ))}
+        {(!transactions || transactions.length === 0) && (
+          <div className="text-center muted">No income found.</div>
+        )}
       </div>
     </div>
   );

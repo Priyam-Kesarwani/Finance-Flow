@@ -20,7 +20,7 @@ const renderCenterLabel = (props, label, totalAmount, fontSizeLabel, fontSizeAmo
         y={cy - 10}
         textAnchor="middle"
         dominantBaseline="central"
-        fill="#666"
+        fill="var(--text-1)"
         fontSize={fontSizeLabel}
       >
         {label}
@@ -30,7 +30,7 @@ const renderCenterLabel = (props, label, totalAmount, fontSizeLabel, fontSizeAmo
         y={cy + 10}
         textAnchor="middle"
         dominantBaseline="central"
-        fill="#333"
+        fill="var(--text-0)"
         fontSize={fontSizeAmount}
         fontWeight="600"
       >

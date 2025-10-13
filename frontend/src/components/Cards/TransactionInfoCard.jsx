@@ -17,14 +17,14 @@ const TransactionInfoCard = ({
 }) => {
   const getAmountStyles = () => {
     return type === "income"
-      ? "bg-green-50 text-green-500"
-      : "bg-red-50 text-red-500";
+      ? "stat-green bg-[rgba(34,197,94,0.08)]"
+      : "stat-red bg-[rgba(239,68,68,0.08)]";
   };
 
   return (
-    <div className="group relative flex flex-wrap items-center gap-3 mt-2 p-3 rounded-lg hover:bg-gray-100/50">
+    <div className="group relative flex flex-wrap items-center gap-3 mt-2 p-3 rounded-lg" style={{ backgroundColor: 'transparent' }}>
       {/* Icon */}
-      <div className="w-10 h-10 flex items-center justify-center text-lg text-gray-800 bg-gray-100 rounded-full flex-shrink-0">
+      <div className="w-10 h-10 flex items-center justify-center text-lg rounded-full flex-shrink-0" style={{ backgroundColor: 'rgba(255,255,255,0.06)', color: 'var(--text-0)' }}>
         {icon ? (
           <img src={icon} alt={title} className="w-5 h-5" />
         ) : (
@@ -34,8 +34,8 @@ const TransactionInfoCard = ({
 
       {/* Details */}
       <div className="flex-1 min-w-[50%]">
-        <p className="text-sm font-medium text-gray-700 break-words">{title}</p>
-        <p className="text-xs text-gray-400 mt-1">{date}</p>
+        <p className="text-sm font-medium break-words" style={{ color: 'var(--text-0)' }}>{title}</p>
+        <p className="text-xs muted mt-1">{date}</p>
       </div>
 
       {/* Amount and Delete */}
@@ -50,6 +50,7 @@ const TransactionInfoCard = ({
         )}
         <div
           className={`flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium ${getAmountStyles()}`}
+          style={{ border: '1px solid var(--card-ring)' }}
         >
           {type === "income" ? "+" : "-"}₹{amount}
           {type === "income" ? <LuTrendingUp /> : <LuTrendingDown />}

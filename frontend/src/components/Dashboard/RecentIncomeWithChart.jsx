@@ -7,7 +7,8 @@ const RecentIncomeWithChart = ({ data, totalIncome }) => {
   const [chartData, setChartData] = useState([]);
 
   const prepareChartData = () => {
-    const dataArr = data?.map((item) => ({
+    const safe = Array.isArray(data) ? data : [];
+    const dataArr = safe.map((item) => ({
       name: item?.source,
       amount: item?.amount,
     }));
@@ -25,13 +26,17 @@ const RecentIncomeWithChart = ({ data, totalIncome }) => {
         <h5 className="text-xl font-medium">Last 60 Days Income</h5>
       </div>
 
-      <CustomPieChart
-        data={chartData}
-        label="Total Income"
-        totalAmount={`₹${totalIncome}`}
-        showTextAnchor
-        colors={COLORS}
-      />
+      {chartData && chartData.length > 0 ? (
+        <CustomPieChart
+          data={chartData}
+          label="Total Income"
+          totalAmount={`₹${totalIncome}`}
+          showTextAnchor
+          colors={COLORS}
+        />
+      ) : (
+        <div className="mt-8 text-center muted">No income in the last 60 days.</div>
+      )}
     </div>
   );
 };

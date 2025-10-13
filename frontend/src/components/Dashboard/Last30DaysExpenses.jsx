@@ -6,7 +6,7 @@ const Last30DaysExpenses = ({ data }) => {
   const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
-    const result = prepareExpenseBarChartData(data);
+    const result = prepareExpenseBarChartData(Array.isArray(data) ? data : []);
     setChartData(result);
 
     return () => {};
@@ -17,7 +17,11 @@ const Last30DaysExpenses = ({ data }) => {
       <div className="flex items-center justify-center">
         <h5 className="text-xl font-medium">Last 30 Days Expenses</h5>
       </div>
-      <CustomBarChart data={chartData}/>
+      {chartData && chartData.length > 0 ? (
+        <CustomBarChart data={chartData}/>
+      ) : (
+        <div className="mt-8 text-center muted">No expense data for the last 30 days.</div>
+      )}
     </div>
   );
 };

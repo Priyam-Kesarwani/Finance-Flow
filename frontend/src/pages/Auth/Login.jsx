@@ -59,19 +59,19 @@ const Login = () => {
   return (
     <AuthLayout>
       <div className="min-h-screen flex items-center justify-center px-4">
-        <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-md space-y-8">
+        <div className="w-full max-w-md p-8 rounded-2xl shadow-md space-y-8" style={{ backgroundColor: 'var(--bg-1)', border: '1px solid var(--card-ring)' }}>
           {/* Header Section */}
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-gray-900">Welcome Back</h3>
-            <p className="mt-2 text-sm text-gray-600">
+            <h3 className="text-2xl font-bold" style={{ color: 'var(--text-0)' }}>Welcome Back</h3>
+            <p className="mt-2 text-sm" style={{ color: 'var(--text-1)' }}>
               Please enter your details to log in
             </p>
           </div>
 
           {/* Error Message */}
           {error && (
-            <div className="bg-red-50 border border-red-200 rounded-lg p-3">
-              <p className="text-sm text-red-600">{error}</p>
+            <div className="rounded-lg p-3" style={{ backgroundColor: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.35)' }}>
+              <p className="text-sm" style={{ color: '#fca5a5' }}>{error}</p>
             </div>
           )}
 
@@ -97,16 +97,17 @@ const Login = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full flex justify-center py-3 px-4 rounded-lg shadow-sm text-sm font-medium btn"
             >
               {isLoading ? "Logging in..." : "LOGIN"}
             </button>
 
-            <p className="text-center text-sm text-gray-600">
+            <p className="text-center text-sm" style={{ color: 'var(--text-1)' }}>
               Don't have an account?{" "}
               <Link
                 to="/signup"
-                className="font-medium text-violet-600 hover:text-violet-500 transition-colors duration-200"
+                className="font-medium"
+                style={{ color: '#60a5fa' }}
               >
                 Sign up
               </Link>

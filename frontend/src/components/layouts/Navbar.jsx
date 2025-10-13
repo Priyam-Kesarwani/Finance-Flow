@@ -54,11 +54,12 @@ const Navbar = ({ activeMenu }) => {
   ];
 
   return (
-    <header className="sticky top-0 z-30 bg-gradient-to-r from-green-300 to-pink-300 border-b border-gray-200 backdrop-blur-md px-6 py-4 shadow-sm flex items-center justify-between">
+    <header className="sticky top-0 z-30 px-6 py-4 shadow-sm flex items-center justify-between" style={{ backgroundColor: 'var(--bg-2)', borderBottom: '1px solid var(--card-ring)' }}>
       {/* Left: Menu + Brand */}
       <div className="flex items-center gap-4">
         <button
-          className="lg:hidden text-gray-700 hover:text-black transition"
+          className="lg:hidden transition"
+          style={{ color: 'var(--text-1)' }}
           onClick={() => setOpenSideMenu(!openSideMenu)}
         >
           {openSideMenu ? (
@@ -67,7 +68,13 @@ const Navbar = ({ activeMenu }) => {
             <HiOutlineMenu className="text-2xl" />
           )}
         </button>
-        <h2 className="text-xl font-semibold text-indigo-700">Finance Flow</h2>
+        <div className="flex items-center gap-2">
+          {/* Turquoise droplet icon */}
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#14b8a6" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2c-3.5 4.6-7 8.1-7 11.6C5 17.8 8.6 21 12 21s7-3.2 7-7.4C19 10.1 15.5 6.6 12 2zM7 13.6C7 10.9 9.2 8.3 12 5c2.8 3.3 5 5.9 5 8.6 0 3-2.2 5.4-5 5.4s-5-2.4-5-5.4z"/>
+          </svg>
+          <h2 className="text-xl font-semibold" style={{ color: 'var(--text-0)' }}>Finance Flow</h2>
+        </div>
       </div>
 
       {/* Right: Stats Summary */}
@@ -77,10 +84,10 @@ const Navbar = ({ activeMenu }) => {
             <div key={idx} className="flex items-center gap-2">
               <div className={`text-xl ${item.color}`}>{item.icon}</div>
               <div>
-                <div className="text-sm text-gray-500 font-medium">
+                <div className="text-sm font-medium" style={{ color: 'var(--text-1)' }}>
                   {item.label}
                 </div>
-                <div className="text-base font-semibold text-gray-800">
+                <div className="text-base font-semibold" style={{ color: 'var(--text-0)' }}>
                   ₹{item.value.toLocaleString()}
                 </div>
               </div>
@@ -91,7 +98,7 @@ const Navbar = ({ activeMenu }) => {
 
       {/* Mobile Side Menu */}
       {openSideMenu && (
-        <div className="fixed top-[64px] left-0 w-[75vw] max-w-xs h-full bg-white shadow-lg">
+        <div className="fixed top-[64px] left-0 w-[75vw] max-w-xs h-full shadow-lg" style={{ backgroundColor: 'var(--bg-1)' }}>
           <SideMenu activeMenu={activeMenu} />
         </div>
       )}

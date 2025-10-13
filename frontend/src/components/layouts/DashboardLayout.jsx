@@ -3,12 +3,11 @@ import { UserContext } from "../../context/userContext";
 import Navbar from "./Navbar";
 import SideMenu from "./SideMenu";
 
-
 const DashboardLayout = ({ children, activeMenu }) => {
   const { user } = useContext(UserContext);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-200">
+    <div className="min-h-screen" style={{ backgroundColor: "var(--bg-0)" }}>
       <Navbar activeMenu={activeMenu} />
 
       {user && (
@@ -17,7 +16,7 @@ const DashboardLayout = ({ children, activeMenu }) => {
             <SideMenu activeMenu={activeMenu} />
           </div>
 
-          <div className="grow mx-5">{children}</div>
+          <div className="grow mx-5 my-5">{children}</div>
         </div>
       )}
     </div>

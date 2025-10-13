@@ -10,12 +10,13 @@ const Input = ({ value, onChange, placeholder, label, type }) => {
 
   return (
     <div>
-      <label className='text-[13px] text-slate-800'>{label}</label>
-      <div className='w-full flex justify-between gap-3 text-sm text-black bg-slate-100 rounded px-4 py-3 mb-4 mt-3 border border-slate-200 outline-none'>
+      <label className='text-[13px]' style={{ color: 'var(--text-1)' }}>{label}</label>
+      <div className='w-full flex justify-between gap-3 text-sm rounded px-4 py-3 mb-4 mt-3 border' style={{ backgroundColor: 'rgba(255,255,255,0.04)', color: 'var(--text-0)', borderColor: 'var(--card-ring)' }}>
         <input
           type={type === 'password' ? (showPassword ? 'text' : 'password') : type}
           placeholder={placeholder}
-          className="w-full bg-transparent outline-none"
+          className="w-full bg-transparent outline-none focus:outline-none dark-input"
+          style={{ caretColor: '#60a5fa', color: 'var(--text-0)' }}
           value={value}
           onChange={onChange}
         />
@@ -23,13 +24,15 @@ const Input = ({ value, onChange, placeholder, label, type }) => {
           showPassword ? (
             <FaRegEye
               size={22}
-              className='text-purple-400 cursor-pointer'
+              className='cursor-pointer'
+              style={{ color: '#60a5fa' }}
               onClick={toggleShowPassword}
             />
           ) : (
             <FaRegEyeSlash
               size={22}
-              className='text-slate-400 cursor-pointer'
+              className='cursor-pointer'
+              style={{ color: 'var(--text-1)' }}
               onClick={toggleShowPassword}
             />
           )

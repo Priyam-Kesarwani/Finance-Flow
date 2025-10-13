@@ -13,13 +13,13 @@ const CustomLineChart = ({ data }) => {
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-white shadow-md rounded-lg p-2 border border-gray-300">
-          <p className="text-xs font-semibold text-purple-800 mb-1">
+        <div className="shadow-md rounded-lg p-2 border" style={{ background: 'var(--bg-2)', borderColor: 'var(--card-ring)' }}>
+          <p className="text-xs font-semibold mb-1" style={{ color: '#c9c3ff' }}>
             {payload[0]?.payload?.category || 'N/A'}
           </p>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm" style={{ color: 'var(--text-1)' }}>
             Amount:{" "}
-            <span className="text-sm font-medium text-gray-900">
+            <span className="text-sm font-medium" style={{ color: 'var(--text-0)' }}>
               ₹{payload[0]?.payload?.amount || 0}
             </span>
           </p>
@@ -30,7 +30,7 @@ const CustomLineChart = ({ data }) => {
   };
 
   return (
-    <div className="bg-white mt-6">
+    <div className="mt-6">
       <ResponsiveContainer width="100%" height={300}>
         <AreaChart data={data}>
         {/* <defs>
@@ -42,11 +42,11 @@ const CustomLineChart = ({ data }) => {
           <CartesianGrid stroke="none" />
           <XAxis 
             dataKey="month" 
-            tick={{ fontSize: 12, fill: "#555" }} 
+            tick={{ fontSize: 12, fill: "var(--text-1)" }} 
             stroke="none" 
           />
           <YAxis 
-            tick={{ fontSize: 12, fill: "#555" }} 
+            tick={{ fontSize: 12, fill: "var(--text-1)" }} 
             stroke="none" 
           />
           <Tooltip content={<CustomTooltip />} />

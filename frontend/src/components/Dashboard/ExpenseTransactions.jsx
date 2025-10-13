@@ -9,13 +9,13 @@ const ExpenseTransactions = ({ transactions, onSeeMore }) => {
       <div className="flex items-center justify-between ">
         <h5 className="text-xl font-medium px-4">Expenses</h5>
 
-        <button className="flex items-center gap-3 text-[12px] font-medium text-gray-700 hover:text-purple-500 bg-gray-50 hover:bg-purple-50 px-4 py-1.5 rounded-lg border border-gray-200/50 cursor-pointer" onClick={onSeeMore}>
+        <button className="btn-ghost" onClick={onSeeMore}>
           See All <LuArrowRight className="text-base" />
         </button>
       </div>
 
       <div className="mt-6">
-        {transactions?.slice(0, 4)?.map((expense) => (
+        {(transactions && transactions.length > 0 ? transactions.slice(0, 4) : []).map((expense) => (
           <TransactionInfoCard
             key={expense._id}
             title={expense.category}
@@ -26,6 +26,9 @@ const ExpenseTransactions = ({ transactions, onSeeMore }) => {
             hideDeleteBtn
           />
         ))}
+        {(!transactions || transactions.length === 0) && (
+          <div className="text-center muted">No expenses in the last 30 days.</div>
+        )}
       </div>
     </div>
   );

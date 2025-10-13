@@ -23,7 +23,7 @@ const SideMenu = ({ activeMenu }) => {
   };
 
   return (
-    <div className="h-[calc(100vh-61px)] border-r bg-gradient-to-b from-yellow-100 to-red-300 border-gray-200 w-64 p-5 sticky top-[61px] z-20">
+    <div className="h-[calc(100vh-61px)] w-64 p-5 sticky top-[61px] z-20" style={{ backgroundColor: 'var(--bg-1)', borderRight: '1px solid var(--card-ring)' }}>
       {/* User Info Section */}
       <div className="flex flex-col items-center justify-center gap-3 mt-3 mb-7">
         {user?.profileImageUrl ? (
@@ -41,7 +41,7 @@ const SideMenu = ({ activeMenu }) => {
           />
         )}
 
-        <h5 className="text-gray-950 font-medium leading-6">
+        <h5 className="font-medium leading-6" style={{ color: 'var(--text-0)' }}>
           {user?.fullName || ""}
         </h5>
       </div>
@@ -50,11 +50,12 @@ const SideMenu = ({ activeMenu }) => {
       {SIDE_MENU_DATA.map((item, index) => (
         <button
           key={`menu_${index}`}
-          className={`w-full flex items-center gap-4 text-[15px] px-4 py-3 rounded-lg mb-2 transition ${
+          className={`w-full flex items-center gap-4 text-[15px] px-4 py-3 rounded-lg mb-2 transition`}
+          style={
             activeMenu === item.label
-              ? "bg-violet-600 text-white"
-              : "hover:bg-gray-100 text-gray-800"
-          }`}
+              ? { background: 'rgba(20,184,166,0.18)', color: '#d2f5ef', border: '1px solid rgba(20,184,166,0.35)' }
+              : { color: 'var(--text-1)' }
+          }
           onClick={() => handleClick(item.path)}
         >
           <item.icon className="text-xl" />

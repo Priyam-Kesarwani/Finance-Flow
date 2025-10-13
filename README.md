@@ -82,6 +82,27 @@
 
 ---
 
+## Screenshots
+
+<img width="1920" height="1080" alt="Screenshot 2025-10-13 195306" src="https://github.com/user-attachments/assets/3f5bd95c-1029-482a-aa30-50cbfb3ab5ee" />
+
+<img width="1920" height="1080" alt="Screenshot 2025-10-13 195315" src="https://github.com/user-attachments/assets/0c64b255-6505-4ac4-8dd8-d32ff3bc5e5d" />
+
+<img width="1920" height="1080" alt="Screenshot 2025-10-13 200631" src="https://github.com/user-attachments/assets/ebf3fec8-b0fe-495f-bd58-d5f05f117852" />
+
+<img width="1920" height="1080" alt="Screenshot 2025-10-13 200644" src="https://github.com/user-attachments/assets/b8ec07a4-bf47-4375-8324-d372d0441312" />
+
+<img width="1920" height="1080" alt="Screenshot 2025-10-13 200313" src="https://github.com/user-attachments/assets/3f53cd95-6f08-4e0b-8ef7-c0b8f1e9c402" />
+
+<img width="1920" height="1080" alt="Screenshot 2025-10-13 200320" src="https://github.com/user-attachments/assets/c931c8c7-41da-44ac-a1a7-1fc3d4bbcc80" />
+
+<img width="1920" height="1080" alt="Screenshot 2025-10-13 200328" src="https://github.com/user-attachments/assets/7f7f1096-1189-4f28-a033-8d48aa3416ca" />
+
+<img width="1920" height="1080" alt="Screenshot 2025-10-13 200335" src="https://github.com/user-attachments/assets/771c331a-aac4-4deb-bc18-77f6ffc8fd0a" />
+
+
+---
+
 ## 🛠️ Setup Instructions
 
 ### 1. Clone the Repository
@@ -110,22 +131,7 @@ npm start
 - MONGO_URI=your_mongo_connection_string
 - JWT_SECRET=your_jwt_secret_key
 
-## Screenshots
 
-![Screenshot 2025-05-07 192220](https://github.com/user-attachments/assets/f942f3ab-289b-457c-ae3e-79ad2df5239d)
-
-![Screenshot 2025-05-07 192209](https://github.com/user-attachments/assets/5a87c093-519c-4ba8-b379-d2b3c7d30613)
-
-<img width="1920" height="1080" alt="Screenshot 2025-07-19 122238" src="https://github.com/user-attachments/assets/df8f0fb9-7749-44fb-9078-e464f8414ecc" />
-
-<img width="1920" height="1080" alt="Screenshot 2025-07-19 122252" src="https://github.com/user-attachments/assets/f11b0462-a88f-4d93-af25-4a267ab0c65a" />
-
-<img width="1920" height="1080" alt="Screenshot 2025-07-19 122305" src="https://github.com/user-attachments/assets/12767a4d-ccc2-4e6a-b205-1f62e161fd39" />
-
-<img width="1920" height="1080" alt="Screenshot 2025-07-19 122321" src="https://github.com/user-attachments/assets/aa3cb539-3c23-4646-882b-50a60859cb10" />
-
-
----
 
 
 

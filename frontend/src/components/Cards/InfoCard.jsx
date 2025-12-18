@@ -1,10 +1,14 @@
+import React from 'react';
+
 const InfoCard = ({ icon, label, value, color }) => {
   return (
-    <div className="p-4 rounded-xl shadow-md flex items-center hover:scale-[1.02] transition-transform duration-300 ease-in-out" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.02), rgba(124,92,255,0.06))', border: '1px solid var(--card-ring)' }}>
-      <div className="text-3xl mr-3">{icon}</div>
+    <div className="card-gradient p-5 flex items-center gap-4 hover:scale-[1.02] transition-transform duration-300 group cursor-default">
+      <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl bg-white/5 border border-white/5 group-hover:bg-white/10 transition-colors ${color ? color : 'text-primary-500'}`}>
+        {icon}
+      </div>
       <div>
-        <div className="text-[11px] uppercase tracking-wide font-semibold muted">{label}</div>
-        <div className="text-xl font-bold mt-1" style={{ color: 'var(--text-0)' }}>{value}</div>
+        <p className="text-xs uppercase tracking-wider font-semibold opacity-60 mb-1" style={{ color: 'var(--text-muted)' }}>{label}</p>
+        <h4 className="text-2xl font-bold tracking-tight" style={{ color: 'var(--text-main)' }}>{value}</h4>
       </div>
     </div>
   );

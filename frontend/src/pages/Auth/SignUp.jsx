@@ -77,27 +77,26 @@ const SignUp = () => {
 
   return (
     <AuthLayout>
-      <div className="min-h-screen flex items-center justify-center px-4 mx-auto max-w-7xl">
-        <div className="w-full max-w-xl p-8 rounded-2xl shadow-md space-y-8" style={{ backgroundColor: 'var(--bg-1)', border: '1px solid var(--card-ring)' }}>
+        <div className="card p-8 space-y-6 max-w-xl mx-auto">
           {/* Header Section */}
-          <div className="text-center">
-            <h3 className="text-2xl font-bold" style={{ color: 'var(--text-0)' }}>
+          <div className="text-center mb-6">
+            <h3 className="text-2xl font-bold mb-2">
               Create an Account
             </h3>
-            <p className="mt-2 text-sm" style={{ color: 'var(--text-1)' }}>
+            <p className="text-sm muted">
               Join us today by entering your details below.
             </p>
           </div>
 
           {/* Error Message */}
           {error && (
-            <div className="rounded-lg p-3" style={{ backgroundColor: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.35)' }}>
-              <p className="text-sm" style={{ color: '#fca5a5' }}>{error}</p>
+            <div className="rounded-lg p-3 bg-red-500/10 border border-red-500/20">
+              <p className="text-sm text-red-400">{error}</p>
             </div>
           )}
 
           <form onSubmit={handleSignUp} className="mt-8 space-y-6">
-            <div className="flex justify-center">
+            <div className="flex justify-center mb-6">
               <ProfilePhotoSelector
                 image={profilePic}
                 setimage={setProfilePic}
@@ -133,24 +132,22 @@ const SignUp = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full flex justify-center py-3 px-4 rounded-lg shadow-sm text-sm font-medium btn"
+              className="w-full py-3 px-4 rounded-xl shadow-lg shadow-purple-500/20 text-sm font-semibold btn-primary"
             >
               {isLoading ? "Creating Account..." : "CREATE ACCOUNT"}
             </button>
 
-            <p className="text-center text-sm" style={{ color: 'var(--text-1)' }}>
+            <p className="text-center text-sm muted mt-4">
               Already have an account?{" "}
               <Link
                 to="/login"
-                className="font-medium"
-                style={{ color: '#60a5fa' }}
+                className="font-medium text-primary-500 hover:text-primary-400"
               >
                 Login
               </Link>
             </p>
           </form>
         </div>
-      </div>
     </AuthLayout>
   );
 };

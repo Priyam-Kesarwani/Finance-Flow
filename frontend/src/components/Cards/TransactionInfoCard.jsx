@@ -15,45 +15,42 @@ const TransactionInfoCard = ({
   hideDeleteBtn,
   onDelete,
 }) => {
-  const getAmountStyles = () => {
-    return type === "income"
-      ? "stat-green bg-[rgba(34,197,94,0.08)]"
-      : "stat-red bg-[rgba(239,68,68,0.08)]";
-  };
-
   return (
-    <div className="group relative flex flex-wrap items-center gap-3 mt-2 p-3 rounded-lg" style={{ backgroundColor: 'transparent' }}>
+    <div className="group relative flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/5">
       {/* Icon */}
-      <div className="w-10 h-10 flex items-center justify-center text-lg rounded-full flex-shrink-0" style={{ backgroundColor: 'rgba(255,255,255,0.06)', color: 'var(--text-0)' }}>
+      <div className="w-12 h-12 flex items-center justify-center text-xl rounded-full bg-white/5 text-gray-300">
         {icon ? (
-          <img src={icon} alt={title} className="w-5 h-5" />
+          <img src={icon} alt={title} className="w-6 h-6 object-contain" />
         ) : (
           <LuUtensils />
         )}
       </div>
 
       {/* Details */}
-      <div className="flex-1 min-w-[50%]">
-        <p className="text-sm font-medium break-words" style={{ color: 'var(--text-0)' }}>{title}</p>
-        <p className="text-xs muted mt-1">{date}</p>
+      <div className="flex-1">
+        <p className="text-sm font-medium text-white line-clamp-1">{title}</p>
+        <p className="text-xs text-gray-500 mt-0.5">{date}</p>
       </div>
 
       {/* Amount and Delete */}
-      <div className="flex items-center gap-2 ml-auto">
+      <div className="flex items-center gap-3">
         {!hideDeleteBtn && onDelete && (
           <button
             onClick={onDelete}
-            className="hover:text-red-500 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer p-1"
+            className="text-gray-500 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity p-2 rounded-full hover:bg-white/5"
           >
-            <LuTrash2 size={18} />
+            <LuTrash2 size={16} />
           </button>
         )}
         <div
-          className={`flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium ${getAmountStyles()}`}
-          style={{ border: '1px solid var(--card-ring)' }}
+          className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-semibold border ${
+            type === "income" 
+                ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20" 
+                : "bg-rose-500/10 text-rose-400 border-rose-500/20"
+          }`}
         >
-          {type === "income" ? "+" : "-"}₹{amount}
-          {type === "income" ? <LuTrendingUp /> : <LuTrendingDown />}
+          {type === "income" ? "+" : "-"} ₹{amount}
+          {type === "income" ? <LuTrendingUp size={14} /> : <LuTrendingDown size={14} />}
         </div>
       </div>
     </div>

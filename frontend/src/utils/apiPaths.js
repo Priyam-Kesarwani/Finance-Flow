@@ -1,5 +1,5 @@
-export const BASE_URL = "https://finance-flow-backend-roog.onrender.com";
-// export const BASE_URL = "http://localhost:8000" 
+// export const BASE_URL = "https://finance-flow-backend-roog.onrender.com";
+export const BASE_URL = "http://localhost:5000"; 
 
 
 export const API_PATHS = {
@@ -25,5 +25,9 @@ export const API_PATHS = {
   },
   IMAGE: {
     UPLOAD_IMAGE: "/api/v1/auth/upload-image",
+  },
+  GEMINI: {
+    ANALYZE: "/api/v1/gemini/analyze",
+    SUMMARY: "/api/v1/gemini/summary",
   },
 };

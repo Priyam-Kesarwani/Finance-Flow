@@ -1,16 +1,11 @@
 import React from "react";
-import { LuArrowRight } from "react-icons/lu";
 import TransactionInfoCard from "../Cards/TransactionInfoCard";
 import moment from "moment";
 
-const RecentTransactions = ({ transactions}) => {
+const RecentTransactions = ({ transactions }) => {
   return (
-    <div className="card">
-      <div className="flex items-center justify-center ">
-        <h5 className="text-xl font-medium">Recent Transactions</h5>
-      </div>
-
-      <div className="mt-6">
+    <div className="w-full">
+      <div className="flex flex-col gap-1">
         {transactions?.slice(0, 5)?.map((item) => (
           <TransactionInfoCard
             key={item._id}
@@ -22,6 +17,9 @@ const RecentTransactions = ({ transactions}) => {
             hideDeleteBtn
           />
         ))}
+        {(!transactions || transactions.length === 0) && (
+            <div className="text-center py-8 text-gray-500 text-sm">No recent transactions found.</div>
+        )}
       </div>
     </div>
   );

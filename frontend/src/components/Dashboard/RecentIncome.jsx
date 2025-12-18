@@ -1,20 +1,11 @@
 import React from "react";
-import { LuArrowRight } from "react-icons/lu";
 import TransactionInfoCard from "../Cards/TransactionInfoCard";
 import moment from "moment";
 
 const RecentIncome = ({ transactions, onSeeMore }) => {
   return (
-    <div className="card">
-      <div className="flex items-center justify-between">
-        <h5 className="text-xl font-medium px-4">Income</h5>
-
-        <button className="btn-ghost" onClick={onSeeMore}>
-          See All <LuArrowRight className="text-base" />
-        </button>
-      </div>
-
-      <div className="mt-6">
+    <div className="w-full">
+      <div className="flex flex-col gap-1">
         {(Array.isArray(transactions) ? transactions.slice(0, 5) : []).map((item) => (
           <TransactionInfoCard
             key={item._id}
@@ -27,7 +18,7 @@ const RecentIncome = ({ transactions, onSeeMore }) => {
           />
         ))}
         {(!transactions || transactions.length === 0) && (
-          <div className="text-center muted">No income found.</div>
+          <div className="text-center py-8 text-gray-500 text-sm">No income found.</div>
         )}
       </div>
     </div>

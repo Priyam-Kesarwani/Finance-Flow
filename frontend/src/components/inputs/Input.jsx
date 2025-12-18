@@ -9,33 +9,22 @@ const Input = ({ value, onChange, placeholder, label, type }) => {
   };
 
   return (
-    <div>
-      <label className='text-[13px]' style={{ color: 'var(--text-1)' }}>{label}</label>
-      <div className='w-full flex justify-between gap-3 text-sm rounded px-4 py-3 mb-4 mt-3 border' style={{ backgroundColor: 'rgba(255,255,255,0.04)', color: 'var(--text-0)', borderColor: 'var(--card-ring)' }}>
+    <div className="mb-4">
+      <label className='text-[13px] font-medium block mb-2' style={{ color: 'var(--text-muted)' }}>{label}</label>
+      
+      <div className="relative group">
         <input
           type={type === 'password' ? (showPassword ? 'text' : 'password') : type}
           placeholder={placeholder}
-          className="w-full bg-transparent outline-none focus:outline-none dark-input"
-          style={{ caretColor: '#60a5fa', color: 'var(--text-0)' }}
+          className="input-premium"
           value={value}
           onChange={onChange}
         />
+        
         {type === "password" && (
-          showPassword ? (
-            <FaRegEye
-              size={22}
-              className='cursor-pointer'
-              style={{ color: '#60a5fa' }}
-              onClick={toggleShowPassword}
-            />
-          ) : (
-            <FaRegEyeSlash
-              size={22}
-              className='cursor-pointer'
-              style={{ color: 'var(--text-1)' }}
-              onClick={toggleShowPassword}
-            />
-          )
+          <div className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer transition-colors hover:text-white" style={{ color: 'var(--text-muted)' }} onClick={toggleShowPassword}>
+            {showPassword ? <FaRegEye size={20} /> : <FaRegEyeSlash size={20} />}
+          </div>
         )}
       </div>
     </div>

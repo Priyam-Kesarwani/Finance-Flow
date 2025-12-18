@@ -58,20 +58,19 @@ const Login = () => {
 
   return (
     <AuthLayout>
-      <div className="min-h-screen flex items-center justify-center px-4">
-        <div className="w-full max-w-md p-8 rounded-2xl shadow-md space-y-8" style={{ backgroundColor: 'var(--bg-1)', border: '1px solid var(--card-ring)' }}>
+        <div className="card p-8 space-y-6">
           {/* Header Section */}
-          <div className="text-center">
-            <h3 className="text-2xl font-bold" style={{ color: 'var(--text-0)' }}>Welcome Back</h3>
-            <p className="mt-2 text-sm" style={{ color: 'var(--text-1)' }}>
+          <div className="text-center mb-6">
+            <h3 className="text-2xl font-bold mb-2">Welcome Back</h3>
+            <p className="text-sm muted">
               Please enter your details to log in
             </p>
           </div>
 
           {/* Error Message */}
           {error && (
-            <div className="rounded-lg p-3" style={{ backgroundColor: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.35)' }}>
-              <p className="text-sm" style={{ color: '#fca5a5' }}>{error}</p>
+            <div className="rounded-lg p-3 bg-red-500/10 border border-red-500/20">
+              <p className="text-sm text-red-400">{error}</p>
             </div>
           )}
 
@@ -97,24 +96,23 @@ const Login = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full flex justify-center py-3 px-4 rounded-lg shadow-sm text-sm font-medium btn"
+              className="w-full py-3 px-4 rounded-xl shadow-lg shadow-purple-500/20 text-sm font-semibold btn-primary"
             >
-              {isLoading ? "Logging in..." : "LOGIN"}
+              {isLoading ? "Logging in..." : "LOG IN"}
             </button>
 
-            <p className="text-center text-sm" style={{ color: 'var(--text-1)' }}>
+            <p className="text-center text-sm muted mt-4">
               Don't have an account?{" "}
               <Link
                 to="/signup"
-                className="font-medium"
-                style={{ color: '#60a5fa' }}
+                className="font-medium text-primary-500 hover:text-primary-400 transition-colors"
+                style={{ color: 'var(--primary-500)' }}
               >
                 Sign up
               </Link>
             </p>
           </form>
         </div>
-      </div>
     </AuthLayout>
   );
 };

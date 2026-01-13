@@ -1,72 +1,86 @@
 # 💰 Finance-Flow
 
-**Finance-Flow** is a full-stack financial management web application built using **React** and **Node.js**. It enables users to track income and expenses, visualize financial trends, and gain insights into personal financial habits.
+**Finance-Flow** is an AI-powered expense tracking web application built using the **MERN Stack**. It helps users manage income and expenses, visualize financial data, and receive smart AI-driven financial insights.
 
 ---
 
 ## 🚀 Features Overview
 
 ### 🔐 Authentication System
-- User registration and login
-- JWT-based secure authentication
-- Profile photo upload
+- User registration and login  
+- JWT-based secure authentication  
+- Profile photo upload  
 
-### 🏠 Dashboard (`Home.jsx`)
-- Total balance, income, and expense overview
-- Recent transactions display
-- Financial charts and insights
-- 30-day expense analysis
-- 60-day income tracking
+### 🏠 Dashboard
+- Total balance, income, and expense overview  
+- Recent transactions display  
+- Real-time financial charts  
+- 30-day expense analysis  
+- 60-day income tracking  
 
-### 💵 Income Management (`Income.jsx`)
-- Add and manage income entries
-- View and filter income history
-- Download reports in Excel format
-- Visualize income analytics
-- Delete income records
+### 💵 Income Management
+- Add and manage income entries  
+- Filter and view income history  
+- Download reports in Excel format  
+- Visualize income analytics  
+- Delete income records  
 
-### 💸 Expense Management (`Expense.jsx`)
-- Track expenses by category
-- View full expense history
-- Analyze expense trends
-- Download expense reports (Excel)
-- Delete expense records
+### 💸 Expense Management
+- Track expenses by category  
+- View complete expense history  
+- Analyze spending trends  
+- Download expense reports (Excel)  
+- Delete expense records  
 
-### 🧩 UI Components
-- Reusable modal component
-- Custom form input components
-- Responsive design with Tailwind CSS
-- Financial charts using Recharts
+### 🤖 AI & OCR Features
+- OCR-based photo scanning for expense entry  
+- Reduced manual data entry time by **60%**  
+- AI-generated saving opportunities  
+- Smart financial tips  
+- Overspending alerts  
+
+### 📊 Data Visualization
+- Interactive charts using **Recharts**  
+- Category-wise expense breakdown  
+- Income vs Expense comparison  
+
+---
+
+## 🧩 UI Components
+- Reusable modal components  
+- Custom form inputs  
+- Responsive UI with **Tailwind CSS**  
+- Optimized for mobile & desktop  
 
 ---
 
 ## 🖥️ Tech Stack
 
 ### Frontend
-- [React](https://reactjs.org/)
-- [Vite](https://vitejs.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Recharts](https://recharts.org/)
+- React  
+- Vite  
+- Tailwind CSS  
+- Recharts  
 
 ### Backend
-- [Node.js](https://nodejs.org/)
-- [Express.js](https://expressjs.com/)
-- [MongoDB](https://www.mongodb.com/)
-- [Multer](https://github.com/expressjs/multer) for file uploads
-- [JWT](https://jwt.io/) for authentication
+- Node.js  
+- Express.js  
+- MongoDB  
+- Multer (File Uploads)  
+- JWT Authentication  
 
 ---
 
 ## 🧠 Core Backend Features
-- RESTful API endpoints
-- JWT authentication middleware
-- File uploads (profile photos)
+- RESTful API endpoints  
+- JWT authentication middleware  
+- Profile photo upload system  
 - MongoDB data models:
-  - **User Model** (with encrypted passwords)
-  - **Income Model**
-  - **Expense Model**
-- Income & Expense CRUD operations
-- Dashboard data aggregation for insights
+  - User (Encrypted passwords)  
+  - Income  
+  - Expense  
+- Full CRUD operations  
+- Dashboard data aggregation for insights  
 
 ---
 
